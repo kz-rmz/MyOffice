@@ -1,0 +1,118 @@
+//Global
+* {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+//---------------------------------
+
+//Variables
+$headerHeight: 5rem;
+$footerHeight: 7rem;
+//---------------------------------
+
+.button {
+  min-width: 13rem;
+  margin-top: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.5rem 2.5rem;
+  background-color: rgba($color: #000, $alpha: .3);
+  text-decoration: none;
+  @media screen and(min-width: 800px){
+    min-width: 20rem;
+  }
+}
+
+.wrap {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/src/imgs/img2.jpg);
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: $headerHeight;
+  background-color: rgba($color: #000000, $alpha: .3);
+}
+
+.login {
+  &:hover {
+    color: rgba($color: #fff, $alpha: .7);
+  }
+  &:hover .dropdown{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.dropdown {
+  padding-top: .5rem;
+  display: none;
+  position: absolute;
+  li {
+    padding-top: .5rem;;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - #{$headerHeight} - #{$footerHeight});
+  @media screen and(min-width: 800px){
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.categories {
+  background-color: rgba($color: #000000, $alpha: .5);
+  color: #fff;
+  width: 95vw;
+  height: 70%;
+  display: flex;
+  padding: 2rem 3rem;
+  font-size: 1.5rem;
+  @media screen and(min-width: 800px){
+    width: 50vw;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+    li {
+      margin-top: 1.5rem;
+      border-bottom: 1px solid #fff;
+    }
+}
+
+.footer {
+  display: flex;
+  font-size: .7rem;
+  height: $footerHeight;
+  padding: .7rem 1rem;
+  line-height: 1.1rem;
+  color: #fff;
+  background-color: rgba($color: #000, $alpha: .3);
+  ul {
+    padding-left: 1.5rem;
+  }
+}
