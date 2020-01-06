@@ -4,7 +4,11 @@ html(lang="en")
   body
     .wrap
       include ./includes/header
-      .content
-        a.button(href="/docs.html") Документы
-        a.button(href="/categories.html") Услуги
-      include ./includes/footer
+      .menu
+        .menu__content
+          .menu__links
+            a.links(href="#") Выбор запроса
+            a.links(href="#") История
+          .menu__elements
+            a.button(href="/docs.html") Документы
+            a.button(href="/categories.html") Услуги

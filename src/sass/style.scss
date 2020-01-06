@@ -2,7 +2,6 @@
 * {
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -20,89 +19,59 @@ a {
 //Variables
 $headerHeight: 5rem;
 $footerHeight: 7rem;
+$mainColor: #00BD13;
+$bgColor: #DBDBDB;
+$fontColor: #4A4A4A;
 //---------------------------------
 
+//Fonts
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url('../fonts/roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Sf-compact-display', sans-serif;
+  src: url('../fonts/sf-compact-display/sf-compact-display-medium.woff');
+}
+
+$mainFont: 'Roboto', sans-serif;
+$secondFont: 'Sf-compact-display', sans-serif;
+
+//---------------------------------
+
+
 .button {
-  min-width: 13rem;
   margin-top: 1rem;
   text-align: center;
   text-transform: uppercase;
-  padding: 1.5rem 2.5rem;
-  background-color: rgba($color: #000, $alpha: .3);
+  padding: 1.3rem 3rem;
+  background-color: #fff;
+  border: 1px solid #AAAAAA;
+  border-radius: 3px;
   text-decoration: none;
-  @media screen and(min-width: 800px){
-    min-width: 20rem;
+  color: $fontColor;
+  transition: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  &:hover{
+    background-color: $mainColor;
+    border: 1px solid $mainColor;
+    color: #fff;;
   }
 }
 
 .wrap {
   width: 100vw;
   height: 100vh;
-  background-image: url(../images/img2.jpg);
-  background-size: cover;
+  background-color: $bgColor;
+  font-family: $mainFont;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  height: $headerHeight;
-  background-color: rgba($color: #000000, $alpha: .3);
-}
+@import 'header';
 
-.login {
-  &:hover {
-    color: rgba($color: #fff, $alpha: .7);
-  }
-  &:hover .dropdown{
-    display: flex;
-    flex-direction: column;
-  }
-}
+@import 'menu';
 
-.dropdown {
-  padding-top: .5rem;
-  display: none;
-  position: absolute;
-  li {
-    padding-top: .5rem;;
-  }
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: calc(100% - #{$headerHeight} - #{$footerHeight});
-  @media screen and(min-width: 800px){
-    flex-direction: row;
-    justify-content: space-around;
-  }
-}
-
-.categories {
-  background-color: rgba($color: #000000, $alpha: .5);
-  color: #fff;
-  width: 95vw;
-  height: 70%;
-  display: flex;
-  padding: 2rem 3rem;
-  font-size: 1.5rem;
-  @media screen and(min-width: 800px){
-    width: 50vw;
-  }
-  ul {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-    li {
-      margin-top: 1.5rem;
-      border-bottom: 1px solid #fff;
-    }
-}
+@import 'categories';
 
 .footer {
   display: flex;
