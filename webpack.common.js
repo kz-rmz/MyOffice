@@ -41,10 +41,10 @@ module.exports = {
                     options: {
                         name: '[name].[hash].[ext]',
                         outputPath: (url, resourcePath) => {
-                            // if (/furs/.test(resourcePath)) {
-                            //     return `imgs/furs/${url}`;
-                            // }
-                            return `imgs/${url}`;
+                            if (/images/.test(resourcePath)) {
+                                return `images/${url}`;
+                            }
+                            return `images/${url}`;
                         }
 
                     }
@@ -62,6 +62,11 @@ module.exports = {
             hash: true,
             template: './src/pug/docs.pug',
             filename: 'docs.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            template: './src/pug/categories.pug',
+            filename: 'categories.html'
         }),
         new MiniCssExtractPlugin({
             filename: "[name].css",

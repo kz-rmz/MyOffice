@@ -3,14 +3,8 @@ html(lang="en")
   include ./includes/head
   body
     .wrap
-      .header
-        h1 MyOffice
-        a.login(href="#") Admin
-          ul.dropdown
-            li item 1
-            li item 2
-            li item 3
+      include ./includes/header
       .content
         a.button(href="/docs.html") Документы
-        a.button(href="") Услуги
+        a.button(href="/categories.html") Услуги
       include ./includes/footer
