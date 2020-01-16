@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+html(lang="en")
+  //-Head
+  include ./includes/head
+  body
+    .wrap
+      include ./includes/header
+      block content
+        .categories
+          .categories__content
+              .categories__links
+                block links
+                  a.links(href="#") Выбор запроса
+                  a.links(href="#") История
+              .categories__elements
+                block elements

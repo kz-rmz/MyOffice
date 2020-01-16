@@ -1,9 +1,16 @@
 .header
   .header__container
-    a(href="index.html")
-      h1 MyOffice
-    a.header__login(href="#") Профиль
-      ul.header__dropdown
-        li История
-        li Пароль
-        li Выйти
+    .header__logo
+      a(href="index.html")
+        h1 MyOffice
+    .header__hamburger-menu
+      input(id="menu__toggle" type="checkbox")
+      label(for="menu__toggle" class="menu__icon")
+        span(class="menu_btn")
+        span(class="menu_btn")
+        span(class="menu_btn")
+      ul(class="header-menu__dropdown")
+        li(class="menu-item"): a(href="#") История
+        li(class="menu-item"): a(href="#") Пароль
+        li(class="menu-item"): a(href="login.html") Выйти
+        li(class="menu-item"): a(href="login.html") Профиль

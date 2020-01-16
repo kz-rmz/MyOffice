@@ -1,15 +1,17 @@
+// eslint-disable-next-line no-unused-vars
 const path = require('path');
+// eslint-disable-next-line no-unused-vars
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+// eslint-disable-next-line no-unused-vars
 var HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 
 
 
 
 module.exports = {
-    entry: './src/app.js',
-
+    entry: './src/js/app.js',
     module: {
         rules: [
             {
@@ -28,9 +30,15 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: [
+                            '@babel/preset-env',
+                            '@babel/react'
+                        ]
                     }
                 }
+            }, {
+                test: /\.index\.js$/,
+                use: ['script-loader']
             }, {
                 test: /\.html$/,
                 use: ['html-loader']
@@ -76,6 +84,16 @@ module.exports = {
             hash: true,
             template: './src/pug/categories.pug',
             filename: 'categories.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            template: './src/pug/login.pug',
+            filename: 'login.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            template: './src/pug/request.pug',
+            filename: 'request.html'
         }),
         new MiniCssExtractPlugin({
             filename: "[name].css",

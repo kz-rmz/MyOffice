@@ -2,7 +2,6 @@
 * {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   box-sizing: border-box;
 }
 
@@ -17,11 +16,12 @@ a {
 //---------------------------------
 
 //Variables
-$headerHeight: 5rem;
-$footerHeight: 7rem;
+$headerHeight: 4rem;
 $mainColor: #00BD13;
 $bgColor: #DBDBDB;
 $fontColor: #4A4A4A;
+$slFont: 1rem;
+$bgFont: 1.3rem;
 //---------------------------------
 
 //Fonts
@@ -63,25 +63,19 @@ $secondFont: 'Sf-compact-display', sans-serif;
 .wrap {
   width: 100vw;
   height: 100vh;
+  overflow-y: hidden;
   background-color: $bgColor;
   font-family: $mainFont;
+  font-size: $slFont;
+  @media screen and(min-width: 800px){
+    font-size: 1.3rem;
+  }
 }
+
+@import 'login';
 
 @import 'header';
 
-@import 'menu';
-
 @import 'categories';
 
-.footer {
-  display: flex;
-  font-size: .7rem;
-  height: $footerHeight;
-  padding: .7rem 1rem;
-  line-height: 1.1rem;
-  color: #fff;
-  background-color: rgba($color: #000, $alpha: .3);
-  ul {
-    padding-left: 1.5rem;
-  }
-}
+@import 'request';

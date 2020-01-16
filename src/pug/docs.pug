@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-html(lang="en")
-  include ./includes/head
-  body
-    .wrap
-      include ./includes/header
-      .categories
-        .categories__content
-          .categories__links
-            a.links(href="#") Выбор запроса
-            a.links(href="#") История
-          .categories__elements
-            a.button(href="#") Cчет на оплату
-            a.button(href="#") Договор
-          .categories__back
-            a(href="#") Назад
-            
+extends block__content.pug
+
+block elements
+  a.button(href="#") Договор
+  a.button(href="#") Счет на оплату
+  .categories__back
+    a(href="index.html") Назад

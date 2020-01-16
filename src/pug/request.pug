@@ -1,0 +1,21 @@
+extends block__content
+
+block links
+  a(href="#" class="request-list__new") Новая заявка
+  a(href="#" class="request-list__hidden")
+block elements
+  form(id="request__form" action="")
+    label(class="request-list__element") Не работает розетка
+      input(type="radio", name="options" id="option1")
+      span(class="radio__button")
+    label(class="request-list__element") Не горит свет
+      input(type="radio", name="options" id="option2")
+      span(class="radio__button")
+    label(class="request-list__element") Нет электричества
+      input(type="radio", name="options" id="option3")
+      span(class="radio__button")
+    label(class="request-list__element" id='desc') Другое
+      input(type="radio", name="options" id="option4")
+      span(class="radio__button")
+      input(type="text", name="options" id="request__description")
+    input(type="button", value="Отправить" class="submit-btn")

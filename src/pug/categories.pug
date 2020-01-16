@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-html(lang="en")
-  include ./includes/head
-  body
-    .wrap
-      include ./includes/header
-      .categories
-        .categories__content
-          .categories__links
-            a.links(href="#") Выбор запроса
-            a.links(href="#") История
-          .categories__elements
-            a.button(href="#") Электрик
-            a.button(href="#") Сантехник
-            a.button(href="#") Связь
-            a.button(href="#") Уборка
-            a.button(href="#") Безопасность
-            a.button(href="#") Другое
-          .categories__back
-            a(href="#") Назад
-            
+extends block__content.pug
+
+block elements
+  a.button(href="request.html") Электрик
+  a.button(href="#") Сантехник
+  a.button(href="#") Связь
+  a.button(href="#") Уборка
+  a.button(href="#") Безопасность
+  a.button(href="#") Другое
+  .categories__back
+    a(href="index.html") Назад

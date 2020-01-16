@@ -10,6 +10,12 @@ const presets = [
       },
     },
   ],
+  [
+    "@babel/preset-react",
+    {
+      development: true
+    }
+  ]
 ];
 
 module.exports = { presets };
