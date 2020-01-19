@@ -1,11 +1,13 @@
-extends block__content.pug
+extends block__content
 
+block links
+  a(href="#" class="request-list__new") Изменить пароль
+  a(href="#" class="request-list__hidden")
 block elements
-  a.button(href="request.html") Электрик
-  a.button(href="#") Сантехник
-  a.button(href="#") Связь
-  a.button(href="#") Уборка
-  a.button(href="#") Безопасность
-  a.button(href="#") Другое
-  .categories__back
-    a(href="index.html") Назад
+  form(class="changepass__form" action="")
+    fieldset
+      input(id="oldpass" placeholder="Мобильный номер" type="password" class="changepass__input")
+      input(placeholder="Новый пароль" type="password" class="changepass__input")
+      input(placeholder="Подтвердите новый пароль" type="password" class="changepass__input")
+      input(type="submit" value="Сохранить" class="submit-btn")
+      a(href="#") Отменить
