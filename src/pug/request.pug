@@ -5,18 +5,20 @@ block links
   a(href="#" class="request-list__hidden")
 block elements
   form(id="request__form" action="")
-    label(class="request-list__element") Не работает розетка
-      input(type="radio", name="options" id="option1" checked)
-      span(class="radio__button")
-    label(class="request-list__element") Не горит свет
-      input(type="radio", name="options" id="option2")
-      span(class="radio__button")
-    label(class="request-list__element") Нет электричества
-      input(type="radio", name="options" id="option3")
-      span(class="radio__button")
-    label(class="request-list__element" id='desc') Другое
-      input(type="radio", name="options" id="option4")
-      span(class="radio__button")
-        input(type="text", name="options" id="request__description")
-    input(type="button", value="Отправить" class="submit-btn")
-  
+    fieldset
+      input(type="radio", name="options" id="option1"  class="radionBtn" checked)
+      label(class="request-list__element" for="option1") Не работает розетка
+      input(type="radio", name="options" id="option2" class="radionBtn")
+      label(class="request-list__element" for="option2") Не горит свет
+      input(type="radio", name="options" id="option3" class="radionBtn")
+      label(class="request-list__element" for="option3") Нет электричества
+      input(type="radio", name="options" id="option4" class="radionBtn")
+      label(class="request-list__element" id='desc' for="option4") Другое
+
+    textarea(name="options", rows="10" id="request__description" for="option4")
+    .request-message
+      h3 Заявка принята!
+      p.
+        Статаус вашей заявки можно посмотреть в <a href="#"> Истории </a>
+      a(href="#") Закрыть
+    input(type="button" value="Отправить" class="submit-btn")
