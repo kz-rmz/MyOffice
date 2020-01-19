@@ -6,7 +6,7 @@ block links
 block elements
   form(id="request__form" action="")
     label(class="request-list__element") Не работает розетка
-      input(type="radio", name="options" id="option1")
+      input(type="radio", name="options" id="option1" checked)
       span(class="radio__button")
     label(class="request-list__element") Не горит свет
       input(type="radio", name="options" id="option2")
@@ -17,5 +17,6 @@ block elements
     label(class="request-list__element" id='desc') Другое
       input(type="radio", name="options" id="option4")
       span(class="radio__button")
-      input(type="text", name="options" id="request__description")
+        input(type="text", name="options" id="request__description")
     input(type="button", value="Отправить" class="submit-btn")
+  
