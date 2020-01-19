@@ -11,7 +11,12 @@ var HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 
 
 module.exports = {
-    entry: './src/js/app.js',
+    entry: {
+        'bundle.js': [
+            path.resolve(__dirname, './src/js/app.js'),
+            path.resolve(__dirname, './src/js/index.js')
+        ]
+    },
     module: {
         rules: [
             {
@@ -94,6 +99,21 @@ module.exports = {
             hash: true,
             template: './src/pug/request.pug',
             filename: 'request.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            template: './src/pug/history.pug',
+            filename: 'history.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            template: './src/pug/changepass.pug',
+            filename: 'changepass.html'
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            template: './src/pug/profile.pug',
+            filename: 'profile.html'
         }),
         new MiniCssExtractPlugin({
             filename: "[name].css",

@@ -1,9 +1,15 @@
 #request__form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   box-sizing: border-box;
-  
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    border: none;
+  }
+  input {
+    transition: 0.3s all linear;
+  }
 }
 
 .request-list__new {
@@ -17,16 +23,15 @@
       }
 }
 
-.request-list__hidden {
-  visibility: hidden;
+.radionBtn {
+  position: relative;
+  top: 15px;
 }
 
 .request-list__element {
   padding-left: 40px;
-  display: block;
-  position: relative;
-  align-items: center;
   color: $fontColor;
+  position: relative;
   cursor: pointer;
   overflow: hidden;
   height: 2.5rem;
@@ -35,62 +40,59 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  &:hover input ~ .radio__button {
-  background-color: #ccc;
-  }
-  input:checked ~ .radio__button {
-    background-color: #ffffff;
-  }
-  .radio__button::after {
-    top: 4px;
-    left: 4px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: $mainColor;
-  }
 }
-
-.request-list__element input:checked ~ .radio__button:after {
-    display: block;
-  }
-
-
-.radio__button {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 22px;
-  width: 22px;
-  background-color: #ffffff;
-  border: 2px solid #aaaaaa;
-  border-radius: 50%;
-  &::after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-}
-
-#option4:checked ~ #request__description {
-  display: block;
-}
-
 
 #request__description {
-  display: block;
+  height: 10rem;
+  width: 100%;
+  background-color: #fff;
+}
+
+#request__description {
+  display: none;
+  padding: .5rem .5rem;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: $fontColor;
+  resize: none;
+  box-sizing: border-box;
+  border-radius: 3px;
+  &:focus {
+    border: none;
+  }
 }
 
 .submit-btn {
-  width: 380px;
-  height: 4rem;
+  background-color: $mainColor;
+  height: 60px;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1.7rem;
+  border: 1px solid #DBDBDB;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.request-message {
+  display: none;
+  text-align: center;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
   font-weight: 200;
-  font-size: 1.2rem;
+  h3 {
+    color: $mainColor;
+    font-weight: 200;
+  }
+  p {
+    padding: 1.2rem 1.5rem;
+  }
+  a {
+    color: $fontColor;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  & > a {
+    font-weight: 500;
+  }
 }

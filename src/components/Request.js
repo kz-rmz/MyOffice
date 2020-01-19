@@ -5,34 +5,11 @@ class Request extends Component {
     return (
       <div className="Request">
         <div className="request-list__elements">
-          <form className="">
-            <div className="radio-row">
-              <div className="input-row">
-                <input
-                  type="radio"
-                  name="public"
-                  value="public"
-                  checked={this.state.selectedRadio === 'public'}
-                  onChange={this.handleRadioChange}
-                />
-                <label htmlFor="public">Public</label>
-              </div>
-              <div className="input-row">
-                <input
-                  type="radio"
-                  name="private"
-                  value="private"
-                  checked={this.state.selectedRadio === 'private'}
-                  onChange={this.handleRadioChange}
-                />
-                <label htmlFor="private">Private</label>
-              </div>
-            </div>
-          </form>
+          <h1>Hello</h1>
         </div>
       </div>
     )
   }
 }
 
-export default App;
+export default Request;
