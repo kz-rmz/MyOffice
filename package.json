@@ -1,6 +1,9 @@
 {
   "name": "myOffice",
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
   "version": "1.0.0",
   "main": "app.js",
   "author": "Shadow",
