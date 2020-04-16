@@ -1,0 +1,21 @@
+@import '../variables';
+
+.element {
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.3rem 3rem;
+  background-color: #fff;
+  border: 1px solid #AAAAAA;
+  border-radius: 3px;
+  text-decoration: none;
+  color: $fontColor;
+  transition: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  &:hover{
+    background-color: $mainColor;
+    border: 1px solid $mainColor;
+    color: #fff;
+    cursor: pointer;
+  }
+}

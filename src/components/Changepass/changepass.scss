@@ -1,0 +1,69 @@
+@import '../variables';
+
+.request-list__hidden {
+  visibility: hidden;
+}
+
+.changepass__form {
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: none;
+  }
+  .changepass__input {
+    height: 60px;
+    margin-top: 20px;
+    border-radius: 3px;
+    border: 1px solid #DBDBDB;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    color: $fontColor;
+    padding-left: 1rem;
+  }
+  a {
+    margin-top: 20px;
+    color: $fontColor;
+    font-size: .9rem;
+    text-decoration: underline;
+    align-self: center;
+  }
+}
+
+.submit-btn {
+  background-color: $mainColor;
+  height: 60px;
+  margin-top: 20px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  border: 1px solid #DBDBDB;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+}
+
+input::placeholder {
+  font-weight: 300;
+   font-family: 'Roboto', sans-serif;
+}
+
+input:focus {
+  outline-offset: 0px !important;
+  outline: none !important;
+}
+
+.pass-cancel {
+  color: $fontColor;
+  border-bottom: 1.2px solid #aaaaaa;
+  margin: 2.5rem auto 0;
+}
+
+.close-pass {
+  display: none;
+  font-size: 1rem;
+  margin: 2rem auto 0;
+  p {
+    font-size: 1.3rem;
+    color: $mainColor;
+  }
+}

@@ -3,47 +3,50 @@ const path = require('path');
 // eslint-disable-next-line no-unused-vars
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-// eslint-disable-next-line no-unused-vars
-var HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 
 
 
 module.exports = {
-    entry: {
-        'bundle.js': [
-            path.resolve(__dirname, './src/js/app.js'),
-            path.resolve(__dirname, './src/js/index.js')
-        ]
-    },
+    entry: './src/app.js',
     module: {
         rules: [
             {
                 test: /\.scss$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader'
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            esModule: true,
+                        }
+                    },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                autoprefixer()
+                            ],
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
                 ]
             }, {
-                test: /\.pug$/,
-                use: ['pug-loader']
-            }, {
-                test: /\.m?js$/,
+                test: /\.m?js?$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            '@babel/preset-env',
-                            '@babel/react'
-                        ]
-                    }
                 }
-            }, {
-                test: /\.index\.js$/,
-                use: ['script-loader']
             }, {
                 test: /\.html$/,
                 use: ['html-loader']
@@ -76,47 +79,10 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            hash: true,
-            template: './src/pug/index.pug',
-            filename: 'index.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: true,
-            template: './src/pug/docs.pug',
-            filename: 'docs.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: true,
-            template: './src/pug/categories.pug',
-            filename: 'categories.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: true,
-            template: './src/pug/login.pug',
-            filename: 'login.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: true,
-            template: './src/pug/request.pug',
-            filename: 'request.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: true,
-            template: './src/pug/history.pug',
-            filename: 'history.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: true,
-            template: './src/pug/changepass.pug',
-            filename: 'changepass.html'
-        }),
-        new HtmlWebpackPlugin({
-            hash: true,
-            template: './src/pug/profile.pug',
-            filename: 'profile.html'
+            template: './src/index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].css",
+            filename: '[name].css'
         })
     ]
 }

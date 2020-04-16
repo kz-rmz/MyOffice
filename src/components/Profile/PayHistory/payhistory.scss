@@ -1,0 +1,32 @@
+@import '../../variables';
+
+.profile__history {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #aaaaaa;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.size {
+  width: 25%;
+}
+
+.profile__history-title {
+  font-weight: 500;
+}
+
+.profle__history-title-item {
+  font-weight: 300;
+  color: $fontColor;
+  flex-grow: 1;
+}
+
+.profile__history-item {
+  font-weight: 300;
+  color: $fontColor;
+  font-size: .8rem;
+  flex-grow: 1;
+}

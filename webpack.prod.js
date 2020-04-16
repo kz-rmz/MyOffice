@@ -9,5 +9,12 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contentHash].js'
   },
-  plugins: [new CleanWebpackPlugin()]
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
+  plugins: [
+    new CleanWebpackPlugin()
+  ]
 })
