@@ -32,7 +32,7 @@
     "html-webpack-pug-plugin": "^2.0.0",
     "html-webpack-tags-plugin": "^2.0.17",
     "mini-css-extract-plugin": "^0.8.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "postcss-loader": "^3.0.0",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
